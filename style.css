@@ -1,0 +1,286 @@
+/* ================================
+   Riemann Sums → Definite Integral
+   Main Stylesheet
+================================ */
+
+
+/* ---------- General ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* ---------- Main Container ---------- */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #667085;
+}
+
+
+/* ---------- Sections ---------- */
+
+.graph-section,
+.controls,
+.results,
+.explanation,
+.aha-message {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.graph-section h2,
+.explanation h2,
+.aha-message h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ---------- Graph ---------- */
+
+#graphCanvas {
+    width: 100%;
+    height: 500px;
+    display: block;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+
+/* ---------- Controls ---------- */
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-group label {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#rectangleValue {
+    font-size: 20px;
+}
+
+
+/* ---------- Slider ---------- */
+
+#rectangleSlider {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #2563eb;
+}
+
+
+/* ---------- Select ---------- */
+
+#methodSelect {
+    width: 220px;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+}
+
+
+/* ---------- Aha Button ---------- */
+
+.aha-container {
+    text-align: center;
+}
+
+#ahaButton {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#ahaButton:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+#ahaButton:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- Results ---------- */
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.result-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+}
+
+.result-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.result-card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* ---------- Explanation ---------- */
+
+.explanation p {
+    margin-bottom: 15px;
+}
+
+.formula,
+.aha-formula {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f1f5f9;
+}
+
+
+/* ---------- Aha Message ---------- */
+
+.aha-message {
+    text-align: center;
+}
+
+.aha-message p {
+    margin-bottom: 12px;
+}
+
+.aha-formula {
+    font-size: 28px;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    #graphCanvas {
+        height: 400px;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    #methodSelect {
+        width: 100%;
+    }
+}
+
+
+/* ---------- Small Screens ---------- */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .graph-section,
+    .controls,
+    .results,
+    .explanation,
+    .aha-message {
+        padding: 18px;
+    }
+
+    #graphCanvas {
+        height: 300px;
+    }
+
+    .result-card p {
+        font-size: 24px;
+    }
+
+    .formula,
+    .aha-formula {
+        font-size: 20px;
+    }
+}

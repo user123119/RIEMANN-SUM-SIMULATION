@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Riemann Sums → Definite Integral</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Riemann Sums → Definite Integral</h1>
+            <p>
+                See how rectangles approximate the area under a curve.
+            </p>
+        </header>
+
+        <!-- Main Simulation -->
+        <main>
+
+            <!-- Graph Section -->
+            <section class="graph-section">
+
+                <h2>Interactive Graph</h2>
+
+                <canvas id="graphCanvas"></canvas>
+
+            </section>
+
+
+            <!-- Controls -->
+            <section class="controls">
+
+                <!-- Number of Rectangles -->
+                <div class="control-group">
+
+                    <label for="rectangleSlider">
+                        Number of rectangles:
+                        <strong>
+                            <span id="rectangleValue">20</span>
+                        </strong>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="rectangleSlider"
+                        min="2"
+                        max="100"
+                        value="20"
+                    >
+
+                </div>
+
+
+                <!-- Riemann Sum Method -->
+                <div class="control-group">
+
+                    <label for="methodSelect">
+                        Riemann Sum Method:
+                    </label>
+
+                    <select id="methodSelect">
+
+                        <option value="left">
+                            Left
+                        </option>
+
+                        <option value="midpoint" selected>
+                            Midpoint
+                        </option>
+
+                        <option value="right">
+                            Right
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Aha Button -->
+                <div class="aha-container">
+
+                    <button id="ahaButton">
+                        ⭐ Show Aha! Moment
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Results -->
+            <section class="results">
+
+                <!-- Approximate Area -->
+                <div class="result-card">
+
+                    <h3>Approximate Area</h3>
+
+                    <p id="approxArea">
+                        0.3333
+                    </p>
+
+                </div>
+
+
+                <!-- Exact Integral -->
+                <div class="result-card">
+
+                    <h3>Exact Integral</h3>
+
+                    <p id="exactIntegral">
+                        0.3333
+                    </p>
+
+                </div>
+
+
+                <!-- Error -->
+                <div class="result-card">
+
+                    <h3>Error</h3>
+
+                    <p id="errorValue">
+                        0.0000
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Mathematical Explanation -->
+            <section class="explanation">
+
+                <h2>How does it work?</h2>
+
+                <p>
+                    The function used in this simulation is:
+                </p>
+
+                <div class="formula">
+                    f(x) = x²
+                </div>
+
+                <p>
+                    We approximate the area under the curve using
+                    rectangles. When the number of rectangles increases,
+                    the rectangles become thinner and the approximation
+                    becomes closer to the exact integral.
+                </p>
+
+                <div class="formula">
+                    ∫₀¹ x² dx = 1/3 ≈ 0.3333
+                </div>
+
+            </section>
+
+
+            <!-- Aha Explanation -->
+            <section
+                id="ahaMessage"
+                class="aha-message"
+                style="display: none;"
+            >
+
+                <h2>💡 Aha! Moment</h2>
+
+                <p>
+                    Notice what happens as the number of rectangles
+                    increases.
+                </p>
+
+                <p>
+                    The rectangles become thinner and fit the curve
+                    more closely.
+                </p>
+
+                <p>
+                    At the same time, the Riemann sum approaches the
+                    exact integral.
+                </p>
+
+                <div class="aha-formula">
+                    Riemann Sum → Definite Integral
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                Interactive Mathematics Simulation
+            </p>
+
+            <p>
+                Built using HTML, CSS and JavaScript
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
